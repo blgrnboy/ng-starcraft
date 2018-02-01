@@ -1,9 +1,9 @@
-<div class="row">
+<div class="row" style="margin-top: 20px">
   <div class="col-md-6">
     <form class="example-form">
       <mat-form-field class="example-full-width">
         <input matInput placeholder="Player Name" [formControl]="playerNameForm"
-                [errorStateMatcher]="matcher">
+                [errorStateMatcher]="matcher" autocomplete="off">
         <mat-error *ngIf="!playerNameForm.hasError('required')">
           Please enter a valid name
         </mat-error>
@@ -11,6 +11,7 @@
           Player name is <strong>required</strong>
         </mat-error>
       </mat-form-field>
+      <button mat-raised-button [disabled]="playerNameForm.invalid" (click)="searchPlayer()">Search</button>
     </form>
   </div>
 </div>

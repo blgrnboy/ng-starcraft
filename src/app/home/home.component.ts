@@ -27,4 +27,9 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  searchPlayer() {
+    const val = this.playerNameForm.value.trim();
+    console.log(val);
+  }
+
 }
