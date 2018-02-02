@@ -5,12 +5,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { PlayerService } from './player.service';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { PlayerProfileComponent } from './player-profile/player-profile.component';
+import { PlayerMatchesComponent } from './player-matches/player-matches.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -28,7 +30,8 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    PlayerProfileComponent
+    PlayerProfileComponent,
+    PlayerMatchesComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -38,6 +41,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatInputModule,
     MatButtonModule
