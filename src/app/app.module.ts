@@ -6,13 +6,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { PlayerService } from './player.service';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
+import { PlayerProfileComponent } from './player-profile/player-profile.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'header', component: HeaderComponent },
+  { path: 'profile/:id', component: PlayerProfileComponent },
   {
     path: '',
     redirectTo: '/home',
@@ -24,7 +27,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    PlayerProfileComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -38,7 +42,7 @@ const appRoutes: Routes = [
     MatInputModule,
     MatButtonModule
   ],
-  providers: [],
+  providers: [PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
